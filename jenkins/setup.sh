@@ -2,12 +2,13 @@
 
 echo "Setup stage"
 # apt dependencies
-sudo ap-get update
+sudo apt-get update
 sudo apt-get install -y curl jq
 
 # install docker
 curl https://get.docker.com | sudo bash
 sudo usermod -aG docker jenkins
+newgrp docker
 
 #install docker-compose
 version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
