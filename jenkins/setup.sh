@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Setup stage"
+
 # apt dependencies
 sudo apt-get update
 sudo apt-get install -y curl jq
