@@ -2,14 +2,14 @@ version: "3.8"
 services:
   frontend:
     build: ./frontend
-    image: todo-app-frontend:latest
+    image: ${DOCKER_HUB_CREDS_USR}/todo-app-frontend:latest
     container_name: todo-app-frontend
     ports:
     - target: 5000
       published: 80
   backend:
     build: ./backend
-    image: todo-app-backend:latest
+    image: ${DOCKER_HUB_CREDS_USR}/todo-app-backend:latest
     container_name: todo-app-backend
     environment:
       DATABASE_URI:
